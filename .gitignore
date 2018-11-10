@@ -1,0 +1,7 @@
+# dependencies
+/node_modules
+
+#keys
+dev.js
+/viktor
+/viktor.pub
