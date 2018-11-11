@@ -1,0 +1,59 @@
+@import "variables";
+@import "layout";
+
+//Dashboard styles file
+@import '../../components/Dashboard/scss/dashboard';
+//Survey Form Combined styles file
+@import "../../components/Surveys/SurveyForm/scss/survey_form_style";
+//Header styles files
+@import '../../components/Header/scss/_header';
+//Landing - combined styles file
+@import '../../components/Landing/scss/_landing';
+//Footer styles file
+@import '../../components/Footer/scss/footer';
+//Loader styles file
+@import '../../components/Loader/scss/loader';
+
+//SOME STYLES TO BE MOVED!!!
+.container {
+  width: 100% !important;
+  max-width: 1000%;
+}
+
+footer {
+  a {
+    display: inline-block;
+    line-height: 35px;
+  }
+  input {
+    border-bottom: 1px solid #fff !important;
+  }
+}
+
+.loader {
+  animation: load8 2.2s linear;
+}
+
+.loader:empty {
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  text-indent: -9999em;
+  background: url("../Images/giphy.gif") center center no-repeat;
+}
+
+@keyframes load8 {
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.5
+  }
+  80% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1;
+  }
+}
