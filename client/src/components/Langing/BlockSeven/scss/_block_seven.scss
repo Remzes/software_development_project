@@ -1,0 +1,28 @@
+//Block seven styles
+.blockseven {
+  background-color: lighten($landing-bgc, 5%);
+
+  @include media_query($non-desktop-var) {
+    padding: 50px 0;
+  }
+
+  @include media_query($desktop-var) {
+    padding: 100px 0 70px;
+  }
+
+  //Block Seven Container Styles
+  &__container {
+    @extend .blockfive__container;
+
+    //Block Seven container:header styles
+    &__header {
+      @extend .blockfive__container__header;
+      margin-bottom: 0;
+
+      //Block Seven container:header container styles
+      &__container {
+        @extend .blockfive__container__header__container;
+      }
+    }
+  }
+}

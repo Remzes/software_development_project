@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b0c3035-a64a-4759-a1eb-0da481566538" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/components/Langing/BlockTwo/BlockTwo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/components/Langing/BlockTwo/scss/_block_two.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Langing/scss/_lading.scss" afterPath="$PROJECT_DIR$/client/src/components/Langing/scss/_lading.scss" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -466,12 +463,12 @@
       <updated>1541888005693</updated>
       <workItem from="1541888008111" duration="2154000" />
       <workItem from="1542149632912" duration="806000" />
-      <workItem from="1543288875848" duration="937000" />
+      <workItem from="1543288875848" duration="1738000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13591000" />
+    <option name="totallyTimeSpent" value="14392000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
