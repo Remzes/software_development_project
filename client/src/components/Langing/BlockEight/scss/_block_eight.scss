@@ -1,0 +1,96 @@
+//Block Eight styles
+.blockeight {
+
+  @include media_query($desktop-var){
+    padding-bottom: 50px;
+  }
+
+  //Container of Map styles
+  .container-map-element {
+    @include media_query($desktop-var){
+      height: 600px;
+    }
+    @include media_query($non-desktop-var){
+      height: 400px;
+    }
+  }
+
+  //Block Eight container styles
+  &__container {
+
+    //Block Eight contact info styles
+    &__contact-info {
+      position: relative;
+      top: 0;
+      @include media_query($desktop-var){
+        height: 200px;
+      }
+      @include media_query($non-desktop-var){
+        height: 100px;
+      }
+
+      //Block Eight list of contact info styles
+      &__list {
+        width: 80%;
+        padding: 15px !important;
+        position: absolute;
+        top: -80px;
+        left: 50%;
+        margin-left: -40%;
+        display: flex;
+        justify-content: space-around;
+        background-color: #fff;
+        border-radius: 3px;
+        box-shadow: 0 0 10px 2px #eee;
+        flex-wrap: wrap;
+
+        //Block Eight item of list of contact info styles
+        &--item {
+          &:first-of-type {
+            order: 1;
+          }
+          &:nth-of-type(2){
+            order: 3;
+            @include media_query($desktop-var){
+              order:2;
+            }
+          }
+          &:last-of-type {
+            order: 2;
+            @include media_query($desktop-var){
+              order: 3;
+            }
+          }
+
+          position: relative;
+          @include media_query($non-desktop-var){
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-width: 154px;
+            padding: 10px;
+          }
+
+          //TO BE FIXED!!! - TO TABLE-CELL
+          span {
+            display: inline-block;
+            color: $sub-color_red;
+            @include media_query($desktop-var){
+              line-height: 44px;
+              height: 44px;
+              position: relative;
+              left: -10px;
+              top: -5px;
+            }
+          }
+
+          p {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+
+}
