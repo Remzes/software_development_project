@@ -29,8 +29,10 @@ class App extends Component {
   }
 
   componentDidMount() {
+    console.log('mounted')
     this.props.fetchUser();
     this.props.loadConfigs();
+    this.props.getUsers();
     setTimeout(() => {
       this.setState({loading: false});
     }, 1500);

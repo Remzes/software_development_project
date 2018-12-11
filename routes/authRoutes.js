@@ -1,5 +1,6 @@
 const passport = require('passport');
 const Admin = require('../models/Admin')
+const User = require('../models/User')
 
 module.exports = (app) => {
 
@@ -36,5 +37,10 @@ module.exports = (app) => {
       admin.length > 0
         ? res.json({ success: true, message: 'You can proceed as an admin!' })
         : res.json({ success: false, message: 'You cannot proceed as an admin!' })
+    })
+
+    app.get('/api/list', async (req, res) => {
+      const users = await User.find({})
+      res.json({ users })
     })
 };

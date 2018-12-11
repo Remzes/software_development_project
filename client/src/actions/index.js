@@ -44,3 +44,12 @@ export const loadConfigs = () => dispatch => {
 export const selectConfig = (id) => dispatch => {
   dispatch({type: SELECT_CONFIG, payload: id})
 };
+
+export const getUsers = () => async dispatch => {
+  const request = await axios.get('/api/list')
+  dispatch({ type: 'SET_USERS', payload: request.data.users })
+}
+
+export const getDeleted = () => dispatch => dispatch({ type: 'GET_DELETED' })
+export const getBanned = () => dispatch => dispatch({ type: 'GET_BANNED' })
+export const getAll = () => dispatch => dispatch({ type: 'GET_ALL' })
