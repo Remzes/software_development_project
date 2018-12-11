@@ -50,6 +50,11 @@ export const getUsers = () => async dispatch => {
   dispatch({ type: 'SET_USERS', payload: request.data.users })
 }
 
+export const deleteUser = id => async dispatch => {
+  const request = await axios.post(`/api/users/${id}`)
+  dispatch({ type: 'DELETE_USER', payload: id })
+}
+
 export const getDeleted = () => dispatch => dispatch({ type: 'GET_DELETED' })
 export const getBanned = () => dispatch => dispatch({ type: 'GET_BANNED' })
 export const getAll = () => dispatch => dispatch({ type: 'GET_ALL' })

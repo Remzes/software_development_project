@@ -43,4 +43,11 @@ module.exports = (app) => {
       const users = await User.find({})
       res.json({ users })
     })
+
+    app.post('/api/users/:id', async (req, res) => {
+      const googleId = req.params.id
+      console.log(googleId)
+      //await User.remove({ googleId })
+      res.send()
+    })
 };

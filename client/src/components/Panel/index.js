@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import $ from 'jquery'
 import Materialize from 'materialize-css'
-import { getAll, getBanned, getDeleted } from '../../actions'
+import { deleteUser } from '../../actions'
 
 class Panel extends React.Component {
 
@@ -10,6 +10,7 @@ class Panel extends React.Component {
     users: this.props.users.users
   }
 
+  remove = id => this.setState({ users: this.props.users.users.filter(user => user.googleId !== id)})
   getBanned = () => this.setState({ users: this.props.users.users.filter(user => user.banned) })
   getDeleted = () => this.setState({ users: this.props.users.users.filter(user => user.deleted) })
   getActive = () => this.setState({ users: this.props.users.users.filter(user => !user.banned && !user.deleted) })
@@ -44,10 +45,14 @@ class Panel extends React.Component {
             {
               this.state.users.length > 0 && this.state.users.map((u, i) => {
                 return (
-                  <li className="collection-item">
+                  <li className="collection-item" style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span>{u.fullName}</span>
                     <span>{u.emailAddress}</span>
                     <span>{u.credits}</span>
+                    <span><button onClick={() => {
+                      this.remove(u.googleId)
+                      this.props.deleteUser(u.googleId)
+                    }}>Delete User</button></span>
                   </li>
                 )
               })
@@ -59,4 +64,4 @@ class Panel extends React.Component {
   }
 }
 
-export default connect(state => ({ users: state.users }), { getAll, getBanned, getDeleted })(Panel)
+export default connect(state => ({ users: state.users }), { deleteUser })(Panel)
