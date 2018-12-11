@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {connect} from 'react-redux';
 import * as actions from '../actions';
 import "../assets/Styles/App.css";
@@ -14,6 +14,7 @@ import Landing from './Langing/index';
 import Dashboard from './Dashboard/Dashboard';
 import SurveyNew from './Surveys/SurveyContainer/SurveyContainer';
 import Admin from './Admin'
+import Panel from './Panel'
 import Footer from './Footer/Footer';
 import Loader from './Loader/Loader';
 //End of Component
@@ -45,7 +46,10 @@ class App extends Component {
       <BrowserRouter>
         <ScrollToTop>
           <div className="container" id="container" ref="container">
-            <Route exact path="/admin" component={Admin}/>
+            <Switch>
+              <Route exact path="/admin" component={Admin} />
+              <Route exact path="/admin/panel" component={Panel} />
+            </Switch>
             <div className="content" id="content">
               <Header />
               <Route exact path="/" component={Landing}/>
