@@ -28,4 +28,13 @@ module.exports = (app) => {
     app.get('/api/current_user', (req, res) => {
        res.send(req.user);
     });
+
+    //Login as admin
+    app.post('/api/admin', async (req, res) => {
+      const { username, password } = req.body
+      const admin = await Admin.find({ username, password })
+      admin.length > 0
+        ? res.json({ success: true, message: 'You can proceed as an admin!' })
+        : res.json({ success: false, message: 'You cannot proceed as an admin!' })
+    })
 };
