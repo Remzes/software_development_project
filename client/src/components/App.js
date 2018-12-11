@@ -13,6 +13,7 @@ import Header from './Header/Header';
 import Landing from './Langing/index';
 import Dashboard from './Dashboard/Dashboard';
 import SurveyNew from './Surveys/SurveyContainer/SurveyContainer';
+import Admin from './Admin'
 import Footer from './Footer/Footer';
 import Loader from './Loader/Loader';
 //End of Component
@@ -44,6 +45,7 @@ class App extends Component {
       <BrowserRouter>
         <ScrollToTop>
           <div className="container" id="container" ref="container">
+            <Route exact path="/admin" component={Admin}/>
             <div className="content" id="content">
               <Header />
               <Route exact path="/" component={Landing}/>

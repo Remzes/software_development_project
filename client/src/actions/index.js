@@ -1,4 +1,5 @@
 import {loadAllImages} from "../fixures/index";
+import Materialize from 'materialize-css'
 import axios from 'axios';
 import {FETCH_USER, FETCH_CONFIG, SELECT_CONFIG, FETCH_SURVEYS} from './types';
 
@@ -27,6 +28,11 @@ export const fetchSurveys = () => dispatch => {
   const request = axios.get('/api/surveys');
   dispatch({type: FETCH_SURVEYS, payload: request.then(result => result.data)})
 };
+
+export const loginAdmin = (username, password) => async dispatch => {
+  const request = await axios.post('/api/admin', { username, password })
+  Materialize.toast(request.data.message)
+}
 
 
 //Load slider configs to the system
