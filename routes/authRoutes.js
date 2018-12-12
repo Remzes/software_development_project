@@ -44,10 +44,17 @@ module.exports = (app) => {
       res.json({ users })
     })
 
-    app.post('/api/users/:id', async (req, res) => {
+    app.post('/api/users/:id/remove', async (req, res) => {
       const googleId = req.params.id
-      console.log(googleId)
-      //await User.remove({ googleId })
+      await User.update({googleId}, { $set: { deleted: true } })
       res.send()
+      //await User.remove({ googleId })
+    })
+
+    app.post('/api/users/:id/ban', async (req, res) => {
+      const googleId = req.params.id
+      await User.update({googleId}, { $set: { banned: true } })
+      res.send()
+      //await User.remove({ googleId })
     })
 };

@@ -32,6 +32,11 @@ export const fetchSurveys = () => dispatch => {
 export const loginAdmin = (username, password) => async dispatch => {
   const request = await axios.post('/api/admin', { username, password })
   Materialize.toast(request.data.message)
+  if (request.data.success) {
+    setTimeout(() => {
+      window.location.replace('/admin/panel')
+    }, 2000)
+  }
 }
 
 
@@ -51,7 +56,12 @@ export const getUsers = () => async dispatch => {
 }
 
 export const deleteUser = id => async dispatch => {
-  const request = await axios.post(`/api/users/${id}`)
+  const request = await axios.post(`/api/users/${id}/remove`)
+  dispatch({ type: 'DELETE_USER', payload: id })
+}
+
+export const banUser = id => async dispatch => {
+  const request = await axios.post(`/api/users/${id}/ban`)
   dispatch({ type: 'DELETE_USER', payload: id })
 }
 

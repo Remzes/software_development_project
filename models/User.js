@@ -6,6 +6,8 @@ const userSchema = new Schema({
     googleId: String,
     fullName: String,
     emailAddress: String,
+    deleted: Boolean,
+    banned: Boolean,
     credits: {
         type: Number,
         default: 0
